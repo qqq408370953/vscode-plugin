@@ -147,7 +147,8 @@ npm install
 # 编译 TypeScript
 npm run compile
 
-# 按 F5 启动调试
+# 打包
+vsce package
 ```
 
 ## 项目结构
