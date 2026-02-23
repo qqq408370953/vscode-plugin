@@ -1,0 +1,59 @@
+{
+  "name": "json-ts-mock-helper",
+  "displayName": "JSON TS Mock Helper",
+  "description": "Convert JSON to TypeScript interfaces and generate mock data from TypeScript interfaces",
+  "version": "0.0.1",
+  "repository": "https://github.com/qqq408370953/vscode-plugin",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:json-ts-mock-helper.convertJsonToTs",
+    "onCommand:json-ts-mock-helper.generateMockFromTs"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "json-ts-mock-helper.convertJsonToTs",
+        "title": "JSON to TS: Convert JSON to TypeScript Interface"
+      },
+      {
+        "command": "json-ts-mock-helper.generateMockFromTs",
+        "title": "JSON to TS: Generate Mock from TypeScript Interface"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "json-ts-mock-helper.convertJsonToTs",
+        "key": "cmd+shift+j",
+        "mac": "cmd+shift+j",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "json-ts-mock-helper.generateMockFromTs",
+        "key": "cmd+shift+m",
+        "mac": "cmd+shift+m",
+        "when": "editorTextFocus"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/node": "^16.18.0",
+    "@types/vscode": "^1.80.0",
+    "@vscode/test-electron": "^2.3.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "quicktype-core": "^23.0.0"
+  }
+}
